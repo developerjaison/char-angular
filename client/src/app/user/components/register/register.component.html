@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="register-container">
+    <div class="register" [formGroup]="registerFormGroup">
+      <h4 class="text-center">Register</h4>
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" class="form-control" [ngClass]="{ 'is-invalid': formControls && formControls.name && formControls.name.touched && formControls.name.errors }"
+        placeholder="Enter name" formControlName="name" id="name">
+      </div>
+      <div class="form-group">
+        <label for="email">Email address:</label>
+        <input type="email" class="form-control" [ngClass]="{ 'is-invalid': formControls && formControls.email && formControls.email.touched && formControls.email.errors }"
+        placeholder="Enter email" formControlName="email" id="email">
+      </div>
+      <div class="form-group">
+        <label for="pwd">Password:</label>
+        <input type="password" class="form-control" [ngClass]="{ 'is-invalid': formControls && formControls.password && formControls.password.touched && formControls.password.errors}"
+        placeholder="Enter password" formControlName="password" id="pwd">
+      </div>
+      <div class="form-group">
+        <label for="cnfmpwd">Confirm Password:</label>
+        <input type="password" class="form-control" [ngClass]="{ 'is-invalid': formControls && formControls.confirmPassword && formControls.confirmPassword.touched && formControls.confirmPassword.errors }"
+        placeholder="Enter Confirm password" formControlName="confirmPassword" id="cnfmpwd">
+      </div>
+      <button type="submit" class="btn btn-primary" [disabled]="!isValidForm" (click)="onSubmit()">Submit</button>
+      <div class="form-group text-center">
+        <a routerLink="/login">Already have an account</a>
+      </div>
+    </div>
+  </div>
+</div>
